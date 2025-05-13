@@ -4,12 +4,8 @@ import { orbitron } from "@/app/fonts";
 import { getReview } from "@/lib/reviews";
 
 
-export default async function Home() {
-  // useEffect(()=> {
-  //   window.alert("I'm Here")
-  //   console.log("Home page loaded");
-  // })
-  const review = await getReview('readme.md')
+export default async function ReviewPage({params:{slug}}:{params:any}) {
+     const review = await getReview(slug)
 
   return (
     <>
