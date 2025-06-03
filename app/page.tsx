@@ -9,7 +9,7 @@ export default async function Home() {
   //   window.alert("I'm Here")
   //   console.log("Home page loaded");
   // })
-  const review = await getReview('readme.md')
+  const review = await getReview('readme')
 
   return (
     <>
