@@ -1,7 +1,7 @@
 // 'use client';
 // import { useEffect } from "react";
 import { orbitron } from "@/app/fonts";
-import { getReview } from "@/lib/reviews";
+import { getFeaturedReview, getReview } from "@/lib/reviews";
 
 
 export default async function Home() {
@@ -9,7 +9,7 @@ export default async function Home() {
   //   window.alert("I'm Here")
   //   console.log("Home page loaded");
   // })
-  const review = await getReview('readme')
+  const review = await getFeaturedReview();
 
   return (
     <>

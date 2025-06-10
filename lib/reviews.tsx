@@ -4,6 +4,11 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import { get } from "node:http";
 
+export async function getFeaturedReview() {
+  const reviews = await getReviews();
+  return reviews[0];
+}
+
 export async function getReview(slug:string) {
   const text = await readFile(`./content/${slug}.md`, "utf-8");
   const { content, data:{ title, date } } = matter(text);
@@ -19,7 +24,7 @@ export async function getReviews() {
     const review = await getReview(slug);
     reviews.push(review);
   }
-  return reviews 
+  return reviews.sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export async function getSlugs() {
