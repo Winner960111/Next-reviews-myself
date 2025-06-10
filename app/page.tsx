@@ -3,6 +3,9 @@
 import { orbitron } from "@/app/fonts";
 import { getFeaturedReview, getReview } from "@/lib/reviews";
 
+export const metadata = {
+  title: "First Next app",
+}
 
 export default async function Home() {
   // useEffect(()=> {
