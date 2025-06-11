@@ -1,7 +1,10 @@
 import { ReactNode } from "react";
 
 export const metadata = {
-  title: "Reviews",
+  title: {
+    default:"Reviews",
+    template: "%s | Reviews | Create Next App",
+  },
 };
 
 export default function Reviewslayout({
