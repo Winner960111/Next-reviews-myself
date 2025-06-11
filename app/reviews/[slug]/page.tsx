@@ -8,6 +8,15 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
+export async function generateMetadata({params}: {params: Promise<{slug: string}>}) {
+     const {slug} = await params;
+     const review = await getReview(slug)
+     return {
+          title: review.title,
+          description: `Review of ${review.title} published on ${review.date}`,
+     };
+}
+
 export default async function ReviewPage({params}: {params: Promise<{slug: string}>}) {
      const {slug} = await params;
      const review = await getReview(slug)
