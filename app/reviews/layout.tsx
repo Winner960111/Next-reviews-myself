@@ -1,5 +1,9 @@
 import { ReactNode } from "react";
 
+export const metadata = {
+  title: "Reviews",
+};
+
 export default function Reviewslayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
