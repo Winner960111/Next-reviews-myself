@@ -4,10 +4,10 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-export default nextConfig;
+// export default nextConfig;
 
-/** @type {import('next').NextConfig} */
+// /** @type {import('next').NextConfig} */
 
-module.exports = {
-  output: "export",
-};
+// module.exports = {
+//   output: "export",
+// };

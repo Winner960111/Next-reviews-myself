@@ -3,6 +3,8 @@
 import { orbitron } from "@/app/fonts";
 import { getFeaturedReview, getReview } from "@/lib/reviews";
 
+export const revalidate = 30 //second
+
 export default async function Home() {
   // useEffect(()=> {
   //   window.alert("I'm Here")

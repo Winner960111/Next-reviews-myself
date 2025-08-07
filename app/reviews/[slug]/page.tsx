@@ -3,6 +3,10 @@
 import { orbitron } from "@/app/fonts";
 import ShareLinkButton from "@/components/ShareLinkButton";
 import { getReview, getSlugs } from "@/lib/reviews";
+import { notFound } from "next/navigation";
+
+// export const dynamic = 'force-dynamic'
+export const revalidate = 30;
 
 export async function generateStaticParams() {
   const slugs = await getSlugs();
@@ -16,6 +20,9 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const review = await getReview(slug);
+  if (!review) {
+    notFound()
+  }
   return {
     title: review.title,
   };
@@ -28,6 +35,9 @@ export default async function ReviewPage({
 }) {
   const { slug } = await params;
   const review = await getReview(slug);
+    if (!review) {
+    notFound()
+  }
   console.log("review:", slug);
   return (
     <>

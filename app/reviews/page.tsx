@@ -3,6 +3,8 @@ import Heading from "@/components/Heading";
 import { get } from "http";
 import { getReviews } from "@/lib/reviews";
 
+export const revalidate = 30 //seconds
+
 export default async function ReviewsPage() {
   const reviews = await getReviews();
   console.log("reviews:", reviews);
