@@ -11,6 +11,12 @@ export default async function ReviewsPage() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <Heading>Reviews</Heading>
+      <div className="flex gap-4 pb-2">
+        <Link href="">&lt;</Link>
+        <span>Page 1</span>
+        <Link href="/reviews?page=2">&gt;</Link>
+
+      </div>
       <h1 className="bg-gray-400 text-red-500 font-bold">
         <ul>
           {reviews.map((review) => (

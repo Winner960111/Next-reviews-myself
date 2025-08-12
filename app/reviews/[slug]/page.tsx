@@ -6,7 +6,7 @@ import { getReview, getSlugs } from "@/lib/reviews";
 import { notFound } from "next/navigation";
 
 // export const dynamic = 'force-dynamic'
-export const revalidate = 30;
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   const slugs = await getSlugs();
